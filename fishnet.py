@@ -95,7 +95,7 @@ except NameError:
     DEAD_ENGINE_ERRORS = (EOFError, IOError)
 
 
-__version__ = "1.18.1"  # remember to update changelog
+__version__ = "1.18.2"  # remember to update changelog
 
 __author__ = "Niklas Fiekas"
 __email__ = "niklas.fiekas@backscattering.de"
@@ -1301,7 +1301,7 @@ def update_self():
     latest_version = result["info"]["version"]
     url = result["releases"][latest_version][0]["url"]
     if latest_version == __version__:
-        logging.info("Already up to date.")
+        logging.info("Please visit https://github.com/niklasf/fishnet and update manually.")
         return 0
 
     # Wait
@@ -1788,7 +1788,7 @@ def update_available():
         return False
 
     if latest_version == __version__:
-        logging.info("[fishnet v%s] Client is up to date", __version__)
+        logging.info("[fishnet v%s] Please visit https://github.com/niklasf/fishnet and update manually", __version__)
         return False
     else:
         logging.info("[fishnet v%s] Update available on PyPI: %s",
@@ -1898,7 +1898,7 @@ def cmd_benchmark(args):
                 logging.warning("Timed out waiting for worker %s to finish", worker.name)
 
         # Log stats
-        logging.info("[fishnet v%s] Analyzed %d positions, crunched %d million nodes",
+        logging.info("[fishnet v%s] Analyzed %d positions, crunched %d million nodes. Please visit https://github.com/niklasf/fishnet and update manually.",
                      __version__,
                      sum(worker.positions for worker in workers),
                      int(sum(worker.nodes for worker in workers) / 1000 / 1000))
@@ -1983,7 +1983,7 @@ def cmd_run(args):
                             raise worker.fatal_error
 
                 # Log stats
-                logging.info("[fishnet v%s] Analyzed %d positions, crunched %d million nodes",
+                logging.info("[fishnet v%s] Analyzed %d positions, crunched %d million nodes. Please visit https://github.com/niklasf/fishnet and update manually.",
                              __version__,
                              sum(worker.positions for worker in workers),
                              int(sum(worker.nodes for worker in workers) / 1000 / 1000))

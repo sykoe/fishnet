@@ -1,6 +1,11 @@
 Changelog for fishnet
 =====================
 
+v1.82.2
+-------
+
+* Nag about update to fishnet 2.x.
+
 v1.18.1
 -------
 

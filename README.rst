@@ -5,9 +5,11 @@ fishnet: distributed Stockfish analysis for lichess.org
     :target: https://pypi.python.org/pypi/fishnet
     :alt: pypi package
 
-.. image:: https://travis-ci.org/niklasf/fishnet.svg?branch=master
-    :target: https://travis-ci.org/niklasf/fishnet
-    :alt: build
+Outdated
+--------
+
+Fishnet 2.x is no longer distributed as a Python package.
+Please visit https://github.com/niklasf/fishnet and update manually.
 
 Installation
 ------------
