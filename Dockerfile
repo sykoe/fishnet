@@ -1,14 +1,14 @@
 FROM rust:slim
 
-LABEL maintainer ""
+LABEL maintainer "sykoe@github.com"
 
 WORKDIR /tmp/fishnet/
 
+#better way for getting repo/git?
 RUN apt-get update && \
-    apt-get install -y git build-essential curl wget software-properties-common zip unzip
+    apt-get install -y git
+    
+RUN git clone --recursive https://github.com/niklasf/fishnet.git . && \
+    cargo build --release
 
-RUN git clone --recursive https://github.com/niklasf/fishnet.git && \
-    cd fishnet
-#RUN cargo run --release --
-
-ENTRYPOINT ["cargo", "run", "--release", "--"]
+ENTRYPOINT ["cargo", "run", "--release", "--", "--no-conf"]
